@@ -1,4 +1,4 @@
-![example workflow](https://github.com/codeaudio/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![yamdb_final workflow](https://github.com/codeaudio/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 #api_yamdb  
 система рейтинга и отзывов к различным объектам
 ***
