@@ -46,10 +46,10 @@ class ReviewSerializerPost(ModelSerializer):
         author = self.context['request'].user
         title = self.context['view'].kwargs.get('title_id')
         method = self.context['request'].method
-        is_POST: bool = method == 'POST'
+        is_post: bool = method == 'POST'
         return (
             CustomReviewValidator().__call__(
-                data, author, is_POST, title, ReviewSerializerPost
+                data, author, is_post, title, ReviewSerializerPost
             )
         )
 
