@@ -9,7 +9,7 @@ services:
     env_file:
       - ./.env
   web:
-  image: ikapustin7/yamdb_final
+    image: ikapustin7/yamdb_final
     restart: always
     volumes:
       - static_value:/code/static/
@@ -21,14 +21,14 @@ services:
     depends_on:
       - migration
       - db
-    migration:
-      image: ikapustin7/yamdb_final
-      command: python manage.py makemigrations --noinput
-      command: python manage.py migrate --noinput
-      volumes:
-        - .:/code
-      depends_on:
-        - db
+  migration:
+    image: ikapustin7/yamdb_final
+    command: python manage.py makemigrations --noinput
+    command: python manage.py migrate --noinput
+    volumes:
+      - .:/code
+    depends_on:
+      - db
   nginx:
     image: nginx:1.19.3
     ports:
