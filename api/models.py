@@ -6,7 +6,7 @@ from django.db import models
 from django.db.models import UniqueConstraint
 
 from .config import ADMIN, MODER, USER
-from .models_validator import year_validator, username_validator
+from .models_validator import username_validator, year_validator
 
 
 class CustomUser(AbstractUser):
