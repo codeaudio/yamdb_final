@@ -15,6 +15,7 @@ class RoleUser(permissions.BasePermission):
                 or view.action in ['partial_update', 'retrieve']
         ):
             return True
+        return False
 
     def has_permission(self, request, view, **kwargs):
         if request.user.is_anonymous:
@@ -33,7 +34,7 @@ class RoleUser(permissions.BasePermission):
                     detail='Only GET, PATCH allowed methods',
                     status_code=status.HTTP_405_METHOD_NOT_ALLOWED
                 )
-        return
+        return False
 
 
 class RoleCategory(permissions.BasePermission):
@@ -50,7 +51,7 @@ class RoleCategory(permissions.BasePermission):
             return True
         if request.user.is_user or request.user.is_moder:
             return False
-        return
+        return False
 
 
 class RoleGenreOrTitle(permissions.BasePermission):
@@ -65,7 +66,7 @@ class RoleGenreOrTitle(permissions.BasePermission):
                 )
         if request.user.is_admin or request.user.is_superuser:
             return True
-        return
+        return False
 
 
 class RoleReviewOrComment(permissions.BasePermission):
@@ -78,7 +79,7 @@ class RoleReviewOrComment(permissions.BasePermission):
                 and request.method in ['GET', 'PATCH', 'PUT', 'DELETE']
         ):
             return True
-        return
+        return False
 
     def has_permission(self, request, view):
         if request.user.is_anonymous:
@@ -91,4 +92,4 @@ class RoleReviewOrComment(permissions.BasePermission):
                 )
         if request.user.is_authenticated:
             return True
-        return
+        return False
