@@ -38,10 +38,10 @@ class CustomSerializerValidator:
 class CustomReviewValidator:
     requires_context = True
 
-    def __call__(self, data, author, is_POST: bool, title, serializer):
+    def __call__(self, data, author, is_post: bool, title, serializer):
         if (
                 Review.objects.filter(author=author, title=title).exists()
-                and is_POST
+                and is_post
         ):
             raise CustomApiException(
                 detail='You can send 1 review on title',
