@@ -54,7 +54,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker pull ${{ secrets.DH_LOGIN }}/${{ secrets.DH_NAME_REPO }}
+          sudo docker pull ${{ secrets.DH_LOGIN }}/${{ secrets.DH_NAME_REPO }}:latest
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env 
