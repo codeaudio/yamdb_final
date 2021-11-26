@@ -18,6 +18,17 @@ services:
       - db
     env_file:
       - ./.env
+    depends_on:
+      - migration
+      - db
+    migration:
+      image: ikapustin7/yamdb_final
+      command: python manage.py makemigrations --noinput
+      command: python manage.py migrate --noinput
+      volumes:
+        - .:/code
+      depends_on:
+        - db
   nginx:
     image: nginx:1.19.3
     ports:
