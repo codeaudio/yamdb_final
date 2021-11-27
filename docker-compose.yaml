@@ -11,8 +11,8 @@ services:
     image: ikapustin7/yamdb_final
     restart: always
     volumes:
-      - static_value:/code/static/
-      - media_value:/code/media/
+      - static_value:/newcode/static/
+      - media_value:/newcode/media/
     depends_on:
       - db
     env_file:
@@ -21,7 +21,7 @@ services:
     image: ikapustin7/yamdb_final
     command: bash -c " python manage.py makemigrations --noinput && python manage.py migrate --noinput "
     volumes:
-      - .:/code
+      - .:/newcode
     depends_on:
       - db
   nginx:
