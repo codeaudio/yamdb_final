@@ -1,1 +1,1 @@
-exec  gunicorn api_yamdb.wsgi:application -c 0.0.0.0:8000
+exec  gunicorn api_yamdb.wsgi:application -c 0.0.0.0:8005
