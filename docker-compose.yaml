@@ -19,7 +19,8 @@ services:
       - ./.env
   migration:
     image: ikapustin7/yamdb_final
-    command: python manage.py migrate --noinput python manage.py makemigrations --noinput
+    command1: python manage.py makemigrations --noinput
+    command2: python manage.py migrate --noinput
     volumes:
       - .:/code
     depends_on:
