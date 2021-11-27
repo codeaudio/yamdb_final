@@ -50,15 +50,16 @@ class CustomUser(AbstractUser):
         verbose_name='Код подтверждения',
     )
 
-    class Role(models.TextChoices):
-        USER = USER, USER
-        MODERATOR = MODER, MODER
-        ADMIN = ADMIN, ADMIN
+    Role = (
+        (USER, USER),
+        (MODER, MODER),
+        (ADMIN, ADMIN)
+    )
 
     role = models.CharField(
         max_length=9,
-        choices=Role.choices,
-        default=Role.USER,
+        choices=Role,
+        default=USER,
         verbose_name='Роль',
     )
 
