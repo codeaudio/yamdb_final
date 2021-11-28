@@ -19,7 +19,6 @@ services:
       - ./.env
   nginx:
     image: nginx:1.19.3
-    command: sudo service nginx start
     ports:
       - "80:80"
     volumes:
