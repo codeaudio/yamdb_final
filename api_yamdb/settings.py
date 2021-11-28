@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [os.environ.get('HOST')]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -167,4 +167,4 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 DEFAULT_FROM_EMAIL = os.environ.get('ADMIN_EMAIL')
 
-ADMINS = ('dev', os.environ.get('ADMIN_EMAIL'))
+ADMINS = ('dev', 'admin.email@example.com')
