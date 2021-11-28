@@ -1,5 +1,3 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
@@ -36,4 +34,4 @@ urlpatterns = [
         name='token_refresh'
     ),
     path('v1/', include(router_v1.urls))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
