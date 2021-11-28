@@ -17,7 +17,7 @@ services:
       - db
     env_file:
       - ./.env
-  migration:
+  migrations:
     depends_on:
       - db
     command: python3 manage.py makemigrations
