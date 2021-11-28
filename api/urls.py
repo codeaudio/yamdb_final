@@ -34,4 +34,5 @@ urlpatterns = [
         name='token_refresh'
     ),
     path('v1/', include(router_v1.urls))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
