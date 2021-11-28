@@ -10,6 +10,8 @@ services:
   web:
     image: ikapustin7/yamdb_final
     restart: always
+    container_name: 62.84.120.238
+    hostname: 62.84.120.238
     volumes:
       - static_value:/newcode/static/
       - media_value:/newcode/media/
