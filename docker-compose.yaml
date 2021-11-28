@@ -17,10 +17,13 @@ services:
       - db
     env_file:
       - ./.env
-  migrations:
+  migration:
+    image: ikapustin7/yamdb_final
+    command: python manage.py migrate --noinput
+    volumes:
+      - .:/newcode
     depends_on:
       - db
-    command: python3 manage.py makemigrations
   nginx:
     image: nginx:1.19.3
     ports:
