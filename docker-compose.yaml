@@ -17,11 +17,14 @@ services:
       - db
     env_file:
       - ./.env
+  migration:
+    depends_on:
+      - db
+    command: python3 manage.py makemigrations
   nginx:
     image: nginx:1.19.3
     ports:
       - "80:80"
-    command: service nginx reload
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static/
