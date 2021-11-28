@@ -10,7 +10,6 @@ services:
   web:
     image: ikapustin7/yamdb_final
     restart: always
-    hostname: 
     volumes:
       - static_value:/newcode/static/
       - media_value:/newcode/media/
