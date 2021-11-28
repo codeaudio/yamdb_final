@@ -7,7 +7,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env
-  web:
+  '62.84.120.238':
     image: ikapustin7/yamdb_final
     restart: always
     container_name: 62.84.120.238
