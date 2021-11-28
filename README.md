@@ -1,4 +1,7 @@
 ![yamdb_final workflow](https://github.com/codeaudio/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
+посмотреть проект можно тут - http://62.84.120.238/api/v1/
+
 #api_yamdb  
 система рейтинга и отзывов к различным объектам
 ***
